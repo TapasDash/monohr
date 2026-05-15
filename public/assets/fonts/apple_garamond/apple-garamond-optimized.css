@@ -1,47 +1,47 @@
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("AppleGaramond-Light.ttf") format("truetype");
+  src: url('AppleGaramond-Light.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url("AppleGaramond-LightItalic.ttf") format("truetype");
+  src: url('AppleGaramond-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("AppleGaramond.ttf") format("truetype");
+  src: url('AppleGaramond.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("AppleGaramond-Italic.ttf") format("truetype");
+  src: url('AppleGaramond-Italic.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("AppleGaramond-Bold.ttf") format("truetype");
+  src: url('AppleGaramond-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Apple Garamond";
+  font-family: 'Apple Garamond';
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("AppleGaramond-BoldItalic.ttf") format("truetype");
+  src: url('AppleGaramond-BoldItalic.ttf') format('truetype');
 }

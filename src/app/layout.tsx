@@ -97,12 +97,12 @@ export default function RootLayout({
             forcedTheme="light"
             disableTransitionOnChange
           >
-            <div className='min-h-screen transition-colors duration-300 overflow-x-hidden'>
-              <div className='relative'>
+            <div className="min-h-screen overflow-x-hidden transition-colors duration-300">
+              <div className="relative">
                 <Navbar />
               </div>
               <main
-                className={`[&>section:first-of-type]:lg:pt-44.5 [&>section:first-of-type]:pt-32 `}
+                className={`[&>section:first-of-type]:pt-32 [&>section:first-of-type]:lg:pt-44.5`}
               >
                 {children}
               </main>

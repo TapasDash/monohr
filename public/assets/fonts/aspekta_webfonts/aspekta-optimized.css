@@ -13,33 +13,33 @@
  */
 
 @font-face {
-  font-family: "Aspekta";
+  font-family: 'Aspekta';
   font-style: normal;
   font-weight: 350;
   font-display: swap;
-  src: url("Aspekta-350.woff2") format("woff2");
+  src: url('Aspekta-350.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Aspekta";
+  font-family: 'Aspekta';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("Aspekta-400.woff2") format("woff2");
+  src: url('Aspekta-400.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Aspekta";
+  font-family: 'Aspekta';
   font-style: normal;
   font-weight: 450;
   font-display: swap;
-  src: url("Aspekta-450.woff2") format("woff2");
+  src: url('Aspekta-450.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Aspekta";
+  font-family: 'Aspekta';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("Aspekta-500.woff2") format("woff2");
+  src: url('Aspekta-500.woff2') format('woff2');
 }
