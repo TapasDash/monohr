@@ -30,47 +30,47 @@ export function JobListingsGrid() {
     }
 
     return (
-        <section className="px-4 pb-18 lg:px-11.75" aria-labelledby="open-roles-heading">
-            <div className="mx-auto w-full max-w-323 space-y-5">
+        <section className="px-4 py-20 lg:px-11.75 lg:py-24" aria-labelledby="open-roles-heading">
+            <div className="mx-auto w-full max-w-323 space-y-8">
                 <div className="flex items-center justify-between gap-3">
-                    <h2 className="text-[24px] leading-7 ">
+                    <h2 className="text-[28px] font-bold leading-tight tracking-tight text-foreground lg:text-[36px]">
                         Open Roles
                     </h2>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         <button
                             type="button"
                             aria-label="Previous jobs"
                             onClick={handlePrevious}
                             disabled={isPrevDisabled}
-                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${isPrevDisabled ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
+                            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background text-foreground transition-all ${isPrevDisabled ? "opacity-30 cursor-not-allowed" : "hover:bg-foreground hover:text-background hover:border-foreground"}`}
                         >
-                            <ChevronLeft size={14} />
+                            <ChevronLeft size={18} />
                         </button>
                         <button
                             type="button"
                             aria-label="Next jobs"
                             onClick={handleNext}
                             disabled={isNextDisabled}
-                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${isNextDisabled ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
+                            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background text-foreground transition-all ${isNextDisabled ? "opacity-30 cursor-not-allowed" : "hover:bg-foreground hover:text-background hover:border-foreground"}`}
                         >
-                            <ChevronRight size={14}/>
+                            <ChevronRight size={18}/>
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
                     {homepageJobs.map((job) => (
                         <JobCard key={job.id} job={job} />
                     ))}
                 </div>
 
-                <div className="mt-10 flex justify-center">
+                <div className="mt-12 flex justify-center">
                     <button
                         type="button"
-                        className="inline-flex items-center rounded-full bg-[#1E293B] px-3.5 py-1.5 text-[16px] leading-6 tracking-[-0.56px] text-white hover:bg-[#162033]"
+                        className="inline-flex items-center rounded-full bg-foreground px-8 py-3 text-[16px] font-semibold leading-none text-background transition-all hover:scale-105 active:scale-95"
                     >
-                        View all
+                        View all listings
                     </button>
                 </div>
             </div>

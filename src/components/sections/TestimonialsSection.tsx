@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface Testimonial {
   id: number
@@ -58,82 +59,91 @@ export function TestimonialsSection() {
     return (index + totalTestimonials) % totalTestimonials
   }
 
-
-
   const activeTestimonial = testimonials[activeIndex]
-  const visibleProfiles = [
-    {
-      index: getWrappedIndex(activeIndex - 1),
-      positionClass:
-        "mt-[10px] h-14 w-14 scale-95 opacity-75 hover:opacity-100 hover:scale-100",
-    },
-    {
-      index: activeIndex,
-      positionClass: "h-18 w-18 scale-110 shadow-[0_8px_24px_rgba(15,23,42,0.2)]",
-    },
-    {
-      index: getWrappedIndex(activeIndex + 1),
-      positionClass:
-        "mt-[10px] h-14 w-14 scale-95 opacity-75 hover:opacity-100 hover:scale-100",
-    },
+  
+  const profileIndices = [
+    getWrappedIndex(activeIndex - 1),
+    activeIndex,
+    getWrappedIndex(activeIndex + 1),
   ]
 
   return (
-    <section className="px-4 py-18 lg:px-11.75 lg:py-24" aria-labelledby="testimonials-heading">
-      <div className="mx-auto flex w-full max-w-260 flex-col items-center text-center">
-
-        <span className="inline-flex rounded-full border border-[#EAEAE2] bg-white px-3.5 py-1.5 text-[16px] leading-6 tracking-[-0.56px] align-middle text-foreground">
-          Trusted by Industry Leaders
+    <section className="px-4 py-28 bg-background lg:px-11.75" aria-labelledby="testimonials-heading">
+      <div className="mx-auto flex w-full max-w-323 flex-col items-center text-center">
+        
+        <span className="inline-flex rounded-full border border-border bg-background px-4 py-1.5 text-[14px] font-medium leading-6 tracking-wide text-foreground uppercase">
+          Success Stories
         </span>
 
-        <div className="mt-16 flex items-start justify-center -space-x-[16px]">
-          {visibleProfiles.map((profile) => {
-            const testimonial = testimonials[profile.index]
-            const isActive = profile.index === activeIndex
+        <div className="mt-16 flex items-center justify-center gap-4">
+          {profileIndices.map((idx, pos) => {
+            const testimonial = testimonials[idx]
+            const isActive = idx === activeIndex
 
             return (
-              <button
-                key={testimonial.id}
-                type="button"
-                onClick={() => setActiveIndex(profile.index)}
-                aria-label={`Show testimonial from ${testimonial.person.name}`}
-                aria-current={isActive}
-                className={`inline-flex items-center justify-center rounded-full border-2 border-white transition-all duration-300 ${profile.positionClass} ${isActive ? "z-10" : "z-0"}`}
+              <motion.button
+                key={`${testimonial.id}-${pos}`}
+                layout
+                onClick={() => setActiveIndex(idx)}
+                className={`relative flex items-center justify-center rounded-full border-4 border-background shadow-xl overflow-hidden transition-opacity ${
+                  isActive ? "z-10 w-24 h-24 ring-4 ring-foreground/5" : "w-16 h-16 opacity-40 hover:opacity-100"
+                }`}
+                initial={false}
+                animate={{
+                  scale: isActive ? 1.2 : 0.9,
+                }}
               >
                 <Image
                   src={testimonial.person.avatar}
                   alt={testimonial.person.name}
                   fill
-                  className={`rounded-full object-cover object-top ${isActive ? "w-[75px] h-[75px]" : "w-[60px] h-[60px]"}`}
+                  className="object-cover object-top"
                 />
-              </button>
+              </motion.button>
             )
           })}
         </div>
 
-        <blockquote className="mt-12 max-w-[1120px] text-[36px] leading-[130%] tracking-[-0.05%] text-[#191919] lg:text-[48px] text-center">
-          &quot;{activeTestimonial.quote}&quot;
-        </blockquote>
-
-        <div className="mt-10">
-          <Image
-            src={activeTestimonial.companyLogo}
-            alt={activeTestimonial.companyAlt}
-            width={160}
-            height={40}
-            className="h-10 w-auto object-contain"
-          />
+        <div className="relative mt-12 min-h-[200px] flex flex-col items-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex flex-col items-center"
+            >
+              <blockquote className="max-w-4xl text-[32px] font-medium italic leading-tight tracking-tight text-foreground lg:text-[44px]">
+                &quot;{activeTestimonial.quote}&quot;
+              </blockquote>
+              
+              <div className="mt-10 flex flex-col items-center gap-4">
+                <Image
+                  src={activeTestimonial.companyLogo}
+                  alt={activeTestimonial.companyAlt}
+                  width={140}
+                  height={36}
+                  className="h-9 w-auto object-contain opacity-80"
+                />
+                <span className="text-[16px] font-semibold text-foreground">
+                  {activeTestimonial.person.name}
+                </span>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div className="mt-8 flex items-center gap-2">
-          {testimonials.map((testimonial, index) => (
+        <div className="mt-12 flex items-center gap-3">
+          {testimonials.map((_, index) => (
             <button
-              key={testimonial.id}
+              key={index}
               type="button"
               onClick={() => setActiveIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === activeIndex ? "w-12 bg-foreground" : "w-2 bg-muted/30 hover:bg-muted"
+              }`}
               aria-label={`Go to testimonial ${index + 1}`}
-              className={`h-2 rounded-full transition-all ${index === activeIndex ? "w-8 bg-[#1E293B]" : "w-2 bg-[#CBD5E1] hover:bg-[#94A3B8]"
-                }`}
             />
           ))}
         </div>

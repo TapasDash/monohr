@@ -1,18 +1,18 @@
 const processSteps = [
   {
-    id: "1",
+    id: "01",
     title: "AI-Driven Triangulation",
     description:
       "We begin by working closely with you to understand your business, culture, and specific hiring requirements.",
   },
   {
-    id: "2",
+    id: "02",
     title: "Technical Validation",
     description:
       "Based on your unique needs, we craft a personalized recruitment strategy designed to attract the best talent.",
   },
   {
-    id: "3",
+    id: "03",
     title: "Seamless Deployment",
     description:
       "Using our platform's tools, we match you with top candidates and integrate with your HR systems.",
@@ -21,36 +21,39 @@ const processSteps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="bg-[#3D4CC2] px-4 py-14 text-white lg:px-11.75 lg:py-18 ">
-      <div className="mx-auto w-full max-w-1440 space-y-6">
-        <span className="inline-flex rounded-full bg-white px-3.5 py-1.5 text-[16px] leading-6 tracking-[-0.56px] align-middle text-[#00235C]">
-          How it works
-        </span>
-        <div className="max-w-[755px] space-y-5">
-          <h2 className="text-[40px] leading-[130%] tracking-[-0.05%] lg:text-[48px]">
+    <section className="bg-[#0F172A] px-4 py-20 text-white lg:px-11.75 lg:py-28">
+      <div className="mx-auto w-full max-w-323">
+        <div className="flex flex-col items-center text-center mb-16">
+          <span className="inline-flex rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-[14px] font-medium leading-6 tracking-wide text-white uppercase">
+            Process
+          </span>
+          <h2 className="mt-8 text-[36px] font-semibold leading-tight tracking-tight lg:text-[48px] max-w-3xl">
             Efficient process to connect businesses with the best talent.
           </h2>
-
-          <p className="text-[20px] leading-[125%] tracking-[-0.05%]">
+          <p className="mt-6 text-[18px] leading-relaxed text-slate-400 max-w-2xl">
             We work closely with you to understand your unique needs, culture, and hiring goals.
             Using this insight, we tailor a recruitment strategy that targets the right candidates.
           </p>
         </div>
 
-
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-9">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {processSteps.map((step) => (
-            <article key={step.id} className="space-y-4">
-              <span className="inline-flex h-7.5 min-w-7.5 items-center justify-center rounded-md bg-[#FFFFFB] px-3 py-1 text-[16px] leading-[135%] tracking-[-0.05%] text-[#1F514C]">
+            <article key={step.id} className="group relative space-y-6 p-8 rounded-2xl bg-white/5 border border-white/10 transition-all hover:bg-white/[0.08] hover:border-white/20">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-[20px] font-bold text-white transition-colors group-hover:bg-white group-hover:text-[#0F172A]">
                 {step.id}
               </span>
-              <div className="h-px w-full bg-[#AEDA9433]">
-                <div className="h-full w-2/5 bg-[#D0F255]" />
+              
+              <div className="space-y-4">
+                <h3 className="text-[22px] font-bold leading-tight tracking-tight text-white">
+                  {step.title}
+                </h3>
+                <p className="text-[16px] leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-[20px] leading-[135%] tracking-[-0.05%] font-[550]">{step.title}</h3>
-              <p className=" text-[16px] leading-[135%] tracking-[-0.05%] ">
-                {step.description}
-              </p>
+
+              {/* Decorative line */}
+              <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-white/30 transition-all" />
             </article>
           ))}
         </div>
