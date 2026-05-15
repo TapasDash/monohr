@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$90k-$140k"
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$110k-$170k"
+  },
+  {
+    "id": 3,
+    "title": "AI/ML Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$140k-$220k"
+  },
+  {
+    "id": 4,
+    "title": "HR Manager",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$60k-$100k"
+  },
+  {
+    "id": 5,
+    "title": "Product Manager",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$130k-$210k"
+  },
+  {
+    "id": 6,
+    "title": "UI/UX Designer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$80k-$130k"
+  },
+  {
+    "id": 7,
+    "title": "Backend Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$100k-$160k"
+  },
+  {
+    "id": 8,
+    "title": "Data Scientist",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$120k-$190k"
+  },
+  {
+    "id": 9,
+    "title": "DevOps Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$115k-$175k"
+  },
+  {
+    "id": 10,
+    "title": "Cloud Architect",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$150k-$240k"
+  },
+  {
+    "id": 11,
+    "title": "QA Automation Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$85k-$135k"
+  },
+  {
+    "id": 12,
+    "title": "Site Reliability Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$125k-$195k"
+  },
+  {
+    "id": 13,
+    "title": "Security Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$130k-$205k"
+  },
+  {
+    "id": 14,
+    "title": "Mobile Engineer (iOS)",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$110k-$170k"
+  },
+  {
+    "id": 15,
+    "title": "Mobile Engineer (Android)",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$110k-$170k"
+  },
+  {
+    "id": 16,
+    "title": "Technical Recruiter",
+    "employmentType": "Full-time",
+    "workMode": "On-site",
+    "salaryRange": "$70k-$110k"
+  },
+  {
+    "id": 17,
+    "title": "Engineering Manager",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$160k-$260k"
+  },
+  {
+    "id": 18,
+    "title": "Business Analyst",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$85k-$130k"
+  },
+  {
+    "id": 19,
+    "title": "Data Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$120k-$185k"
+  },
+  {
+    "id": 20,
+    "title": "Machine Learning Scientist",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$145k-$225k"
+  },
+  {
+    "id": 21,
+    "title": "Performance Marketing Lead",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$95k-$150k"
+  },
+  {
+    "id": 22,
+    "title": "Customer Success Manager",
+    "employmentType": "Full-time",
+    "workMode": "On-site",
+    "salaryRange": "$75k-$120k"
+  },
+  {
+    "id": 23,
+    "title": "Solutions Architect",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$140k-$215k"
+  },
+  {
+    "id": 24,
+    "title": "Growth Product Manager",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$135k-$210k"
+  },
+  {
+    "id": 25,
+    "title": "Content Strategist",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$65k-$105k"
+  },
+  {
+    "id": 26,
+    "title": "Graphic Designer",
+    "employmentType": "Full-time",
+    "workMode": "On-site",
+    "salaryRange": "$60k-$95k"
+  },
+  {
+    "id": 27,
+    "title": "Finance Analyst",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$80k-$125k"
+  },
+  {
+    "id": 28,
+    "title": "Operations Specialist",
+    "employmentType": "Full-time",
+    "workMode": "On-site",
+    "salaryRange": "$70k-$110k"
+  },
+  {
+    "id": 29,
+    "title": "Technical Writer",
+    "employmentType": "Contract",
+    "workMode": "Remote",
+    "salaryRange": "$55k-$90k"
+  },
+  {
+    "id": 30,
+    "title": "Sales Development Rep",
+    "employmentType": "Full-time",
+    "workMode": "On-site",
+    "salaryRange": "$65k-$100k"
+  },
+  {
+    "id": 31,
+    "title": "People Operations Lead",
+    "employmentType": "Full-time",
+    "workMode": "Hybrid",
+    "salaryRange": "$90k-$145k"
+  },
+  {
+    "id": 32,
+    "title": "Support Engineer",
+    "employmentType": "Full-time",
+    "workMode": "Remote",
+    "salaryRange": "$85k-$130k"
+  }
+]
