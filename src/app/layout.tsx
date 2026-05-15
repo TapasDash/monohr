@@ -5,6 +5,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from 'next-themes';
+import { PostHogProvider } from './providers';
 
 const aspekta = localFont({
   src: [
@@ -87,24 +88,26 @@ export default function RootLayout({
       className={`${aspekta.variable} ${appleGaramond.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className='min-h-screen transition-colors duration-300 overflow-x-hidden'>
-            <div className='relative'>
-              <Navbar />
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className='min-h-screen transition-colors duration-300 overflow-x-hidden'>
+              <div className='relative'>
+                <Navbar />
+              </div>
+              <main
+                className={`[&>section:first-of-type]:lg:pt-44.5 [&>section:first-of-type]:pt-32 `}
+              >
+                {children}
+              </main>
+              <Footer />
             </div>
-            <main
-              className={`[&>section:first-of-type]:lg:pt-44.5 [&>section:first-of-type]:pt-32 `}
-            >
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
