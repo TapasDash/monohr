@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import jobs from "@/data/jobs.json"
-import { JobCard } from "../common/JobCard"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+
+import jobs from "@/data/jobs.json"
+
+import { JobCard } from "../common/JobCard"
 
 const SCROLL_STEP = 332
 

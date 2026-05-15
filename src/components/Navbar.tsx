@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
 import { useState } from "react";
 
 const NAVIGATION_ITEMS = [
@@ -43,12 +42,7 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Desktop Theme Toggle - Hidden on mobile */}
 
-
-                    <div className="hidden lg:flex items-center ml-7 absolute left-full ">
-                        <ThemeToggle />
-                    </div>
 
                     {/* Mobile Hamburger Menu Button */}
                     <button
@@ -105,8 +99,6 @@ const Navbar = () => {
                                 </Link>
                             ))}
                         </div>
-                        {/* Theme Toggle */}
-                        <ThemeToggle />
                     </div>
                 </div>
             )}

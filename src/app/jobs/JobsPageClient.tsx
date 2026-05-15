@@ -1,11 +1,12 @@
 "use client"
 
-import { useMemo, useState } from "react"
 import { Search } from "lucide-react"
-import jobs from "@/data/jobs.json"
+import { useMemo, useState } from "react"
+
 import { JobCard } from "@/components/common/JobCard"
 import { Pagination } from "@/components/ui/Pagination"
 import { PillTab } from "@/components/ui/PillTab"
+import jobs from "@/data/jobs.json"
 
 const JOBS_PER_PAGE = 12
 const FILTER_OPTIONS = [

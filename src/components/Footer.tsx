@@ -1,6 +1,6 @@
+import { MessageCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDownCircle, MessageCircle, X } from "lucide-react"
 
 const servicesLinks = ["EOR India", "Contractor Management", "Contractor of Record"]
 const companyLinks = ["About Us", "Our vision", "Contact us"]
@@ -84,7 +84,7 @@ export default function Footer() {
               </div>
 
               <p className=" text-[16px] leading-[135%] tracking-[-0.05%] text-[#0E0500BF]">
-                MonoHR is India's leading EOR platform, helping global companies hire and manage
+                MonoHR is India&apos;s leading EOR platform, helping global companies hire and manage
                 teams in India with 48-hour setup, 100% compliance, and 40% cost savings.
               </p>
 
@@ -169,9 +169,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between pt-5">
               <p className="text-[14px] leading-5 align-middle text-[#00000099] divide-x divide-[#4A5565]">
                 <span className="pr-2">{"\u00A9"} 2026 MonoHR. All rights reserved.</span>
-                <span className="inline-block pl-2">Built with
-                  <span className="text-[#000000]"> ❤️ </span>
-                  in India  •  Powered by
+                <span className="inline-block pl-2">Powered by
                   <Link href="https://buildmono.com/" className="text-[#155DFC]"> Mono </Link></span>
               </p>
 

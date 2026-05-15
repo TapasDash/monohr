@@ -1,10 +1,12 @@
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
 import './globals.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from 'next-themes';
+
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+
 import { PostHogProvider } from './providers';
 
 const aspekta = localFont({
@@ -91,8 +93,8 @@ export default function RootLayout({
         <PostHogProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            forcedTheme="light"
             disableTransitionOnChange
           >
             <div className='min-h-screen transition-colors duration-300 overflow-x-hidden'>

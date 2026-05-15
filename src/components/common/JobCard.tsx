@@ -1,5 +1,6 @@
-import type { Job } from "@/types/job"
 import { CircleDollarSign, Layers, MapPin, MoveRight } from "lucide-react"
+
+import type { Job } from "@/types/job"
 
 interface JobCardProps {
     job: Job
