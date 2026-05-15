@@ -7,11 +7,11 @@ const HeroSection = () => {
             aria-labelledby="hero-heading"
         >
             <div className="mx-auto flex w-full max-w-230 flex-col items-center text-center">
-                <div className="mb-8 inline-flex flex-wrap items-center justify-center overflow-hidden rounded-full border border-[#EAEAE2] bg-[#FFFFFF] shadow-[0_1px_0_rgba(0,0,0,0.04)] lg:mb-10 divide-y sm:divide-x divide-[#EAEAE2]">
+                <div className="mb-8 inline-flex flex-wrap items-center justify-center overflow-hidden rounded-full border border-[#EAEAE2] bg-[#FFFFFF] shadow-[0_1px_0_rgba(0,0,0,0.04)] lg:mb-10 divide-x divide-[#EAEAE2]">
                     <span className=" px-3.5 py-1.5 text-[16px] leading-6 text-foreground">
                         Avg time-to-hire: 48h
                     </span>
-                    <span className=" px-3.5 py-1.5 text-[16px] leading-6 text-foreground">
+                    <span className=" px-3.5 py-1.5 text-[16px] leading-6 text-foreground sm:block hidden">
                         Vetted talent: 1.5M+
                     </span>
                     <span className="px-3.5 py-1.5 text-[16px] leading-6 text-foreground">

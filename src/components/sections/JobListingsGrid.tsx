@@ -1,32 +1,65 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import jobs from "@/data/jobs.json"
 import { JobCard } from "../common/JobCard"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-const JOBS_PER_PAGE = 8
+const SCROLL_STEP = 332
 
 export function JobListingsGrid() {
-    const [page, setPage] = useState(0)
-    const totalPages = Math.ceil(jobs.length / JOBS_PER_PAGE)
+    const scrollRef = useRef<HTMLDivElement | null>(null)
+    const [canScrollPrev, setCanScrollPrev] = useState(false)
+    const [canScrollNext, setCanScrollNext] = useState(true)
 
-    const homepageJobs = useMemo(() => {
-        const start = page * JOBS_PER_PAGE
-        return jobs.slice(start, start + JOBS_PER_PAGE)
-    }, [page])
+    const updateScrollState = () => {
+        const container = scrollRef.current
+        if (!container) return
 
-    const isPrevDisabled = page === 0
-    const isNextDisabled = page === totalPages - 1
+        const maxScrollLeft = container.scrollWidth - container.clientWidth
+        const threshold = 4
+
+        setCanScrollPrev(container.scrollLeft > threshold)
+        setCanScrollNext(container.scrollLeft < maxScrollLeft - threshold)
+    }
+
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
+
+        updateScrollState()
+
+        const handleResize = () => updateScrollState()
+
+        container.addEventListener("scroll", updateScrollState)
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            container.removeEventListener("scroll", updateScrollState)
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [])
 
     const handlePrevious = () => {
-        if (isPrevDisabled) return
-        setPage((currentPage) => currentPage - 1)
+        const container = scrollRef.current
+        if (!container || !canScrollPrev) return
+        container.scrollBy({ left: -SCROLL_STEP, behavior: "smooth" })
     }
 
     const handleNext = () => {
-        if (isNextDisabled) return
-        setPage((currentPage) => currentPage + 1)
+        const container = scrollRef.current
+        if (!container || !canScrollNext) return
+        container.scrollBy({ left: SCROLL_STEP, behavior: "smooth" })
+    }
+
+    const handleWheelScroll: React.WheelEventHandler<HTMLDivElement> = (event) => {
+        const container = scrollRef.current
+        if (!container) return
+
+        if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return
+
+        event.preventDefault()
+        container.scrollBy({ left: event.deltaX, behavior: "auto" })
     }
 
     return (
@@ -42,8 +75,8 @@ export function JobListingsGrid() {
                             type="button"
                             aria-label="Previous jobs"
                             onClick={handlePrevious}
-                            disabled={isPrevDisabled}
-                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${isPrevDisabled ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
+                            disabled={!canScrollPrev}
+                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${!canScrollPrev ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
                         >
                             <ChevronLeft size={14} />
                         </button>
@@ -51,18 +84,24 @@ export function JobListingsGrid() {
                             type="button"
                             aria-label="Next jobs"
                             onClick={handleNext}
-                            disabled={isNextDisabled}
-                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${isNextDisabled ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
+                            disabled={!canScrollNext}
+                            className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#1F2937] ${!canScrollNext ? "cursor-not-allowed opacity-45" : "hover:bg-[#F4F5F7]"}`}
                         >
                             <ChevronRight size={14}/>
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-                    {homepageJobs.map((job) => (
+                <div
+                    ref={scrollRef}
+                    onWheel={handleWheelScroll}
+                    className="overflow-x-auto pb-1 scrollbar-none [&::-webkit-scrollbar]:hidden"
+                >
+                    <div className="grid w-max grid-flow-col grid-rows-2 gap-4">
+                    {jobs.map((job) => (
                         <JobCard key={job.id} job={job} />
                     ))}
+                    </div>
                 </div>
 
                 <div className="mt-10 flex justify-center">

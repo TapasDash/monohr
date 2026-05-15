@@ -84,14 +84,21 @@ export function FAQSection() {
                   </button>
                 </div>
 
-                {isOpen ? (
+                <div
+                  className={`grid overflow-hidden transition-[grid-template-rows,opacity,transform,margin-top] duration-400 ease-out ${
+                    isOpen
+                      ? "mt-3 grid-rows-[1fr] opacity-100 translate-y-0"
+                      : "mt-0 grid-rows-[0fr] opacity-0 -translate-y-1"
+                  }`}
+                >
                   <p
                     id={`faq-panel-${item.id}`}
-                    className="mt-3 text-[16px] leading-[135%] tracking-[-0.05%] text-[#000000]/75 lg:text-[20px]"
+                    aria-hidden={!isOpen}
+                    className="min-h-0 text-[16px] leading-[135%] tracking-[-0.05%] text-[#000000]/75 lg:text-[20px]"
                   >
                     {item.answer}
                   </p>
-                ) : null}
+                </div>
               </article>
             )
           })}

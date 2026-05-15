@@ -8,7 +8,7 @@ import { useState } from "react";
 const NAVIGATION_ITEMS = [
     { href: "/jobs", label: "Jobs" },
     { href: "/about", label: "About" },
-    { href: "/contact-us", label: "Contact Us" },
+    { href: "/contact", label: "Contact Us" },
 ];
 
 const Navbar = () => {
