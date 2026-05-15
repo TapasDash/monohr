@@ -65,7 +65,7 @@ export function TestimonialsSection() {
     {
       index: getWrappedIndex(activeIndex - 1),
       positionClass:
-        "mt-[10px] h-14 w-14 scale-95 opacity-75 hover:opacity-100 hover:scale-100",
+        "mt-[10px] h-14 w-14 scale-95 hover:opacity-100 hover:scale-100 right-5",
     },
     {
       index: activeIndex,
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
     {
       index: getWrappedIndex(activeIndex + 1),
       positionClass:
-        "mt-[10px] h-14 w-14 scale-95 opacity-75 hover:opacity-100 hover:scale-100",
+        "mt-[10px] h-14 w-14 scale-95 hover:opacity-100 hover:scale-100 left-5",
     },
   ]
 
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
           Trusted by Industry Leaders
         </span>
 
-        <div className="mt-16 flex items-start justify-center -space-x-[16px]">
+        <div className="mt-16 relative flex items-start justify-center">
           {visibleProfiles.map((profile) => {
             const testimonial = testimonials[profile.index]
             const isActive = profile.index === activeIndex
@@ -98,7 +98,7 @@ export function TestimonialsSection() {
                 onClick={() => setActiveIndex(profile.index)}
                 aria-label={`Show testimonial from ${testimonial.person.name}`}
                 aria-current={isActive}
-                className={`inline-flex items-center justify-center rounded-full border-2 border-white transition-all duration-300 ${profile.positionClass} ${isActive ? "z-10" : "z-0"}`}
+                className={`absolute top-0 inline-flex items-center justify-center rounded-full border-2 border-white transition-all duration-300 ${profile.positionClass} ${isActive ? "z-10" : "z-0"}`}
               >
                 <Image
                   src={testimonial.person.avatar}
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
           })}
         </div>
 
-        <blockquote className="mt-12 max-w-[1120px] text-[36px] leading-[130%] tracking-[-0.05%] text-[#191919] lg:text-[48px] text-center">
+        <blockquote className="mt-28 max-w-[1120px] text-[36px] leading-[130%] tracking-[-0.05%] text-[#191919] lg:text-[48px] text-center">
           &quot;{activeTestimonial.quote}&quot;
         </blockquote>
 

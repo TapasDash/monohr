@@ -11,6 +11,13 @@
   --font-sans: var(--font-aspekta);
   --font-serif: var(--font-apple-garamond);
   --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 680px;
+  --breakpoint-lg: 1060px;
+  --breakpoint-xl: 1380px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
 }
 
 @media (prefers-color-scheme: dark) {
