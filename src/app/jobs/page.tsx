@@ -1,8 +1,7 @@
-
-import { JobsPageClient } from "./JobsPageClient"
+import { JobsPageClient } from './JobsPageClient';
 
 const JobsPage = () => {
-    return <JobsPageClient />
-}
+  return <JobsPageClient />;
+};
 
 export default JobsPage;
