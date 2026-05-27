@@ -110,39 +110,7 @@ const Navbar = () => {
   );
 };
 
-            {/* Mobile Menu Overlay */}
-
-            {isMenuOpen && (
-                <div className="fixed inset-0 top-0 z-40 lg:hidden">
-                    {/* Backdrop */}
-                    <div
-                        className="absolute bg-black"
-                        onClick={() => setIsMenuOpen(false)}
-                    />
-                    {/* Menu Content */}
-                    <div className="relative z-50 flex flex-col items-start justify-center bg-black p-6 pt-45.5">
-                        {/* 182px = 36 from the top + 68 header height + 78 after header */}
-                        {/* Navigation Links */}
-                        <div className="flex flex-col items-start gap-1.5 md:gap-5 mb-6">
-                            {NAVIGATION_ITEMS.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    className="font-aspekta font-semibold md:font-medium text-16 md:text-24 bg-neutral-200 rounded px-4 py-2 text-black hover:bg-neutral-100 hover:shadow active:shadow-none transition-colors"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
-                        </div>
-                        {/* Theme Toggle */}
-                        {/* <ThemeToggle /> */}
-                    </div>
-                </div>
-            )}
-
-        </header>
-    )
-}
-
 export default Navbar;
+
+
+
