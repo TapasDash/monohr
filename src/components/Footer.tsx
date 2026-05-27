@@ -190,22 +190,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-20 border-t border-[#00000029]">
-            <div className="flex flex-col gap-4 pt-5 lg:flex-row lg:items-center lg:justify-between">
-              <p className="divide-x divide-[#4A5565] align-middle text-[14px] leading-5 text-[#00000099]">
-                <span className="pr-2">
-                  {'\u00A9'} 2026 MonoHR. All rights reserved.
-                </span>
-                <span className="inline-block pl-2">
-                  Powered by
-                  <Link
-                    href="https://buildmono.com/"
-                    className="text-[#155DFC]"
-                  >
-                    {' '}
-                    Mono{' '}
-                  </Link>
-                </span>
+          <div className="border-t border-[#00000029] mt-20">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between pt-5">
+              <p className="text-[14px] leading-5 align-middle text-[#00000099] divide-x divide-[#4A5565]">
+                <span className="pr-2">{"\u00A9"} 2026 MonoHR. All rights reserved.</span>
+                <span className="inline-block pl-2"> Powered by
+                  <Link href="https://buildmono.com/" className="text-[#155DFC]"> Mono </Link></span>
               </p>
 
               <div className="flex flex-wrap items-center gap-5 lg:gap-8">

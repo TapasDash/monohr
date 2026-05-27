@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: #F8F7F2;
   --foreground: #171717;
 }
 
@@ -20,12 +20,6 @@
   --breakpoint-4xl: 2560px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f8f7f2;
-    --foreground: #000000;
-  }
-}
 
 body {
   background: var(--background);
