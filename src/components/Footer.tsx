@@ -169,9 +169,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between pt-5">
               <p className="text-[14px] leading-5 align-middle text-[#00000099] divide-x divide-[#4A5565]">
                 <span className="pr-2">{"\u00A9"} 2026 MonoHR. All rights reserved.</span>
-                <span className="inline-block pl-2">Built with
-                  <span className="text-[#000000]"> ❤️ </span>
-                  in India  •  Powered by
+                <span className="inline-block pl-2"> Powered by
                   <Link href="https://buildmono.com/" className="text-[#155DFC]"> Mono </Link></span>
               </p>
 
